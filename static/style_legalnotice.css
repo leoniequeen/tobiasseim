@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Typewriter';
+    src: url('/static/fonts/Typewriter.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Typewriter', sans-serif;
+    color: #DBD0C1;
+}
+
+.bg{
+    position: fixed; /* Vom normalen Layout losgelöst */
+    top: 0;
+    left: 0;
+    height: auto;
+    pointer-events: none; /* Hintergrund soll keine Klicks blockieren */
+}
+
+.bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bg_left{
+    position: absolute; /* Beide liegen übereinander */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.bg_right{
+    position: absolute; /* Beide liegen übereinander */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    position: absolute;
+    top: 0;
+    left: 41%;
+    transform: translateX(-41%);
+    width: 35%;
+    padding-top: 50px;
+}
+
+.back_button a {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    transform: translate(-2%, -2%);
+    text-decoration: none;
+    color: #DBD0C1;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+.back_button a:hover .arrow {
+    opacity: 1;
+}
+
+.arrow{
+    opacity: 0;
+}

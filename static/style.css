@@ -1,0 +1,432 @@
+@font-face {
+    font-family: 'Typewriter';
+    src: url('/static/fonts/Typewriter.ttf') format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Typewriter', sans-serif;
+    color: #DBD0C1;
+}
+
+.bg{
+    position: fixed; /* Vom normalen Layout losgelöst */
+    top: 0;
+    left: 0;
+    height: auto;
+    pointer-events: none; /* Hintergrund soll keine Klicks blockieren */
+}
+
+.bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg_left{
+    position: absolute; /* Beide liegen übereinander */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.bg_right{
+    position: absolute; /* Beide liegen übereinander */
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+}
+
+section {
+    min-height: 110vh; /* 80% der Bildschirmhöhe */
+}
+
+.headline{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: auto;
+    text-align: left;
+    font-size: 40px;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.photo1{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translateX(-40%);
+    padding-top: 150px;
+    img{
+        height: 350px;
+    }
+}
+
+.papersnippet{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translateX(-40%);
+    padding-top: 510px;
+}
+
+.papersnippet img{
+    height: 200px;
+}
+
+.name{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translateX(-40%);
+    padding-top: 580px;
+    font-size: 50px;
+    color: black;
+}
+
+.photo2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 750px;
+    img{
+        height: 350px;
+    }
+}
+
+.about_text{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 1200px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 64%;
+    transform: translateX(-64%);
+    padding-top: 1700px;
+    z-index: 2;
+}
+
+.cover img {
+    height: 250px;
+}
+
+.book_text{
+    position: absolute;
+    top: 0;
+    right: 20%;
+    transform: translateX(20%);
+    padding-top: 2000px;
+    font-size: 30px;
+    text-align: center;
+    width: 60%;
+}
+
+.book_text2{
+    position: absolute;
+    top: 0;
+    right: 20%;
+    transform: translateX(20%);
+    padding-top: 2100px;
+    font-size: 24px;
+    text-align: center;
+    width: 60%;
+}
+
+.shop_button{
+    position: absolute;
+    top: 0;
+    left: 65%;
+    transform: translateX(-65%);
+    padding-top: 2550px;
+    z-index: 2;
+}
+
+.end_text{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 3000px;
+    font-size: 40px;
+    text-align: center;
+    cursor: default;
+}
+
+.legal {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    transform: translateX(-10%);
+    padding-top: 3375px;
+    display: flex;
+    justify-content: center; /* oder space-between, wenn du sie verteilen willst */
+    gap: 5rem; /* Abstand zwischen den Links */
+    font-size: 24px;
+  }
+
+  .hover-deco {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #DBD0C1;
+    font-weight: bold;
+  }
+  
+  .lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.8rem; /* mehr Platz zwischen den Linien */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 0.5rem; /* Abstand zwischen den Linien */
+  }
+  
+  .lines span {
+    display: block;
+    width: 15px;
+    height: 2px;
+    background-color: #DBD0C1;
+  }
+  
+  .left span:nth-child(1),
+  .right span:nth-child(3) {
+    transform: rotate(30deg);
+  }
+  
+  .left span:nth-child(2),
+  .right span:nth-child(2) {
+    transform: rotate(0deg);
+  }
+  
+  .left span:nth-child(3),
+  .right span:nth-child(1) {
+    transform: rotate(-30deg);
+  }
+  
+  .hover-deco:hover .lines {
+    opacity: 1;
+  }
+  
+.instagram{
+    position: absolute;
+    top: 0;
+    right: 10%;
+    transform: translateX(10%);
+    padding-top: 3350px;
+}
+
+.instagram img{
+    height: 50px;
+}
+
+.bluesky{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    transform: translateX(5%);
+    padding-top: 3350px;
+}
+
+.bluesky img{
+    height: 50px;
+}
+
+#start {
+    overflow: hidden;
+}
+
+#line1, #line2 {
+    white-space: pre; /* Sehr wichtig: Behalte Leerzeichen */
+}
+
+@media (max-width: 600px) {
+    section {
+        min-height: 40vh; /* 80% der Bildschirmhöhe */
+    }
+
+    .headline {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-left: 15px;
+    }
+
+    .photo1{
+        position: absolute;
+        top: 0;
+        left: 40%;
+        transform: translateX(-40%);
+        padding-top: 70px;
+        img{
+            height: 100px;
+        }
+    }
+
+    .papersnippet{
+        position: absolute;
+        top: 0;
+        left: 40%;
+        transform: translateX(-40%);
+        padding-top: 145px;
+    }
+
+    .papersnippet img{
+        height: 50px;
+    }
+
+    .name{
+        position: absolute;
+        top: 0;
+        left: 40%;
+        transform: translateX(-40%);
+        padding-top: 165px;
+        font-size: 12px;
+        color: black;
+    }
+
+    .photo2{
+        position: absolute;
+        top: 0;
+        right: 10%;
+        transform: translateX(10%);
+        padding-top: 225px;
+        img{
+            height: 100px;
+        }
+    }
+
+    .about_text{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 300px;
+        font-size: 14px;
+        text-align: center;
+        width: 30%
+    }
+
+    .cover{
+        position: absolute;
+        top: 0;
+        left: 59%;
+        transform: translateX(-59%);
+        padding-top: 590px;
+        z-index: 2;
+    }
+
+    .cover img {
+        height: 100px;
+    }
+
+    .book_text{
+        position: absolute;
+        top: 0;
+        right: 10%;
+        transform: translateX(10%);
+        padding-top: 710px;
+        font-size: 16px;
+        text-align: center;
+        width: 80%;
+    }
+
+    .book_text2{
+        position: absolute;
+        top: 0;
+        right: 10%;
+        transform: translateX(10%);
+        padding-top: 760px;
+        font-size: 14px;
+        text-align: center;
+        width: 80%;
+    }
+
+    .shop_button{
+        position: absolute;
+        top: 0;
+        left: 60%;
+        transform: translateX(-60%);
+        padding-top: 1200px;
+        z-index: 2;
+    }
+
+    .shop_button a img{
+        height: 30px;
+    }
+
+    .end_text{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 1350px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .legal {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        transform: translateX(-10%);
+        padding-top: 1500px;
+        display: flex;
+        justify-content: center; /* oder space-between, wenn du sie verteilen willst */
+        gap: 0.5rem; /* Abstand zwischen den Links */
+        font-size: 14px;
+      }
+    
+      .hover-deco {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #DBD0C1;
+        font-weight: bold;
+      }
+      
+      .hover-deco:hover{
+        text-decoration: underline;
+      }
+
+    .instagram{
+        position: absolute;
+        top: 0;
+        right: 15%;
+        transform: translateX(15%);
+        padding-top: 1500px;
+    }
+
+    .instagram img{
+        height: 25px;
+    }
+
+    .bluesky{
+        position: absolute;
+        top: 0;
+        right: 5%;
+        transform: translateX(5%);
+        padding-top: 1500px;
+    }
+
+    .bluesky img{
+        height: 25px;
+    }
+
+}

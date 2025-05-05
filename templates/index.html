@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tobias Seim</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" href="/static/images/favicon.png" type="image/png">
+</head>
+<body oncontextmenu="return false">
+    <div class="bg_images">
+        <img src="/static/images/bg.png" alt="overlay" class="bg">
+        <img src="/static/images/left.png" alt="notes on paper" class="bg_left">
+        <img src="/static/images/right.png" alt="notes on paper" class="bg_right">
+    </div>
+    <section id="start">
+    <div class="headline">
+        <div id="line1-start"></div>
+        <div id="line2-start"></div>
+    </div>
+    <div class="photo1">
+        <img src="/static/images/photo1.png" alt="Tobias Seim" class="photo">
+    </div>
+    <div class="papersnippet">
+        <img src="/static/images/papersnippet.png" alt="paper" class="photo">
+    </div>
+    <div class="name">
+        <div id="line3-start"></div>
+    </div>
+</section>
+    <section id="about">
+        <div class="photo2">
+            <img src="/static/images/photo2.png" alt="Tobias Seim" class="photo">
+        </div>
+        <div class="about_text">
+        Tobias Seim is some guy who<br>quit school, learned<br>nothing, and now spends his<br>time reading and writing.<br>At least occasionally. 
+        </div>
+    </section>
+
+    <section id="books">
+    <div class="book_text">
+        <div id="line1-books"></div>
+        <div id="line2-books"></div>
+    </div>
+    <div class="book_text2">
+    to hunt down dreams like rabid wolves is a collection of poetry about the grand inanities and abrasive routines of existence. It’s about people and their laughter. About copulation, wicks, sunflowers, good old despair and its funny side. It’s about dead pet hamsters as well as dew-laden weeds, straitjackets, guns, and the glimmers of hope that swirl within the nothingness. Somewhat disenchanted, a little incongruous, and despondent through and through, this book might resemble less a coherent montage of poems, and more the moaning of a widow. Or the endless ramblings of a street corner nutcase. Or the pleas of yet another convict on death row. Or maybe it’s nothing more than a mumbled answer to some questions no one ever asked.<br>In the end, it is what it is. Enjoy.
+    </div>  
+    </div>
+    <div class="shop_button">
+        <a href="https://www.amazon.de/hunt-down-dreams-rabid-wolves/dp/3982528704" target="_blank">
+            <img src="/static/images/shopbutton.png" alt="shop now" class="button">
+            </a> 
+    </div>
+     <div class="cover">
+        <a href="https://www.amazon.de/hunt-down-dreams-rabid-wolves/dp/3982528704" target="_blank">
+            <img src="/static/images/cover.jpg" alt="to hunt down dreams like rabid wolves">
+        </a>
+    </div>
+    </section>
+
+    <section id="end">
+        <div class="end_text">
+            <div id="line1-end"></div>
+        </div>
+        <div class="legal">
+            <a href="/legalnotice" class="hover-deco">
+                <span class="lines left">
+                <span></span><span></span><span></span>
+                </span>
+                legal notice
+                <span class="lines right">
+                <span></span><span></span><span></span>
+                </span>
+            </a>   
+            <a href="/privacypolicy" class="hover-deco"><span class="lines left">
+                <span></span><span></span><span></span>
+                </span>
+                privacy policy
+                <span class="lines right">
+                <span></span><span></span><span></span>
+                </span>
+            </a>   
+        </div>
+        <div class="instagram">
+            <a href="https://www.instagram.com/seimtobias/" target="_blank">
+                <img src="/static/images/instagram.png" alt="Instagram" class="photo">
+            </a>
+        </div>
+        <div class="bluesky">
+            <a href="https://bsky.app/seimtobias/" target="_blank">
+                <img src="/static/images/bluesky.png" alt="Bluesky" class="photo">
+            </a>
+        </div>
+    </section>
+
+    <script>
+    const texts = {
+        start: { text1: "just another idiot screaming", text2: "into the nothingness", text3: "Tobias Seim" },
+        books: { text1: "to hunt down dreams like", text2: "rabid wolves" },
+        end: { text1: "whatever.", text2: "", text3: "" }
+    };
+
+    // Funktion, die den Text animiert
+    function typeLine(sectionId, text1, text2, text3) {
+        const line1 = document.getElementById('line1-' + sectionId);
+        const line2 = document.getElementById('line2-' + sectionId);
+        const line3 = document.getElementById('line3-' + sectionId);
+
+        let index1 = 0, index2 = 0; index3 = 0;
+
+        function typeFirstLine() {
+            if (index1 < text1.length) {
+                line1.textContent += text1.charAt(index1);
+                index1++;
+                setTimeout(typeFirstLine, 80);
+            } else {
+                setTimeout(typeSecondLine, 80); // Warten, dann zweite Zeile
+            }
+        }
+
+        function typeSecondLine() {
+            if (index2 < text2.length) {
+                line2.textContent += text2.charAt(index2);
+                index2++;
+                setTimeout(typeSecondLine, 80);
+            } else {
+                setTimeout(typeThirdLine, 80); // Warten, dann zweite Zeile
+            }
+        }
+
+        function typeThirdLine() {
+            if (index3 < text3.length) {
+                line3.textContent += text3.charAt(index3);
+                index3++;
+                setTimeout(typeThirdLine, 80);
+            }
+        }
+
+        // Start der Animation
+        typeFirstLine();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const options = {
+        root: null,  // Wir beobachten den gesamten Viewport
+        rootMargin: "0px",
+        threshold: 0.6  // 50% der Section müssen sichtbar sein
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            console.log(entry.target.id); // Logge das Section-ID, um zu sehen, ob der Observer funktioniert
+            if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+
+            // Nur wenn der Text noch nicht animiert wurde und es Text für diese Section gibt
+            if (!entry.target.classList.contains("visible") && texts[sectionId]) {
+                entry.target.classList.add("visible");
+                const { text1, text2, text3 } = texts[sectionId];
+                typeLine(sectionId, text1, text2, text3);
+            }
+        }
+        });
+    }, options);
+
+    // Alle Sections beobachten
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+    });
+    </script>
+
+</body>
+</html>
