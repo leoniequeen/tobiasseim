@@ -187,40 +187,8 @@ section {
     font-weight: bold;
   }
   
-  .lines {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 1.8rem; /* mehr Platz zwischen den Linien */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    gap: 0.5rem; /* Abstand zwischen den Linien */
-  }
-  
-  .lines span {
-    display: block;
-    width: 15px;
-    height: 2px;
-    background-color: #DBD0C1;
-  }
-  
-  .left span:nth-child(1),
-  .right span:nth-child(3) {
-    transform: rotate(30deg);
-  }
-  
-  .left span:nth-child(2),
-  .right span:nth-child(2) {
-    transform: rotate(0deg);
-  }
-  
-  .left span:nth-child(3),
-  .right span:nth-child(1) {
-    transform: rotate(-30deg);
-  }
-  
-  .hover-deco:hover .lines {
-    opacity: 1;
+  .hover-deco:hover{
+    text-decoration: underline;
   }
   
 .instagram{
