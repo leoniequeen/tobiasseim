@@ -46,13 +46,17 @@
     to hunt down dreams like rabid wolves is a collection of poetry about the grand inanities and abrasive routines of existence. It’s about people and their laughter. About copulation, wicks, sunflowers, good old despair and its funny side. It’s about dead pet hamsters as well as dew-laden weeds, straitjackets, guns, and the glimmers of hope that swirl within the nothingness. Somewhat disenchanted, a little incongruous, and despondent through and through, this book might resemble less a coherent montage of poems, and more the moaning of a widow. Or the endless ramblings of a street corner nutcase. Or the pleas of yet another convict on death row. Or maybe it’s nothing more than a mumbled answer to some questions no one ever asked.<br>In the end, it is what it is. Enjoy.
     </div>
     </div>
-    <div class="shop_button">
-        <a href="https://www.amazon.de/hunt-down-dreams-rabid-wolves/dp/3982528704" target="_blank">
-            <img src="/static/images/shopbutton.png" alt="shop now" class="button">
-            </a> 
+    <img src="/static/images/shopbutton.png" alt="shop now" class="shop_button" id="shop-button">
+    <div id="shop-popup" class="popup hidden">
+    <div class="popup-content">
+        <span id="close-popup" class="close">&times;</span>
+        buy the book here:
+        <a href="https://www.amazon.com/hunt-down-dreams-rabid-wolves/dp/3982528704" target="_blank">Amazon</a>
+        <a href="https://www.barnesandnoble.com/dein-link" target="_blank">Barnes & Noble</a>
+        <a href="https://example.com" target="_blank">Kobo</a>
+    </div>
     </div>
      <div class="cover">
-        <a href="https://www.amazon.de/hunt-down-dreams-rabid-wolves/dp/3982528704" target="_blank">
             <img src="/static/images/cover.jpg" alt="to hunt down dreams like rabid wolves">
         </a>
     </div>
@@ -157,6 +161,26 @@
         observer.observe(section);
     });
     });
+
+    const shopButton = document.getElementById("shop-button");
+  const popup = document.getElementById("shop-popup");
+  const closePopup = document.getElementById("close-popup");
+
+  shopButton.addEventListener("click", () => {
+    popup.classList.remove("hidden");
+  });
+
+  closePopup.addEventListener("click", () => {
+    popup.classList.add("hidden");
+  });
+
+  // Optional: Klick außerhalb des Pop-ups schließt es auch
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+    }
+  });
+
     </script>
 
 </body>
